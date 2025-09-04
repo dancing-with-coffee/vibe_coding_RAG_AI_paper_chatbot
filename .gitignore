@@ -584,3 +584,4 @@ Thumbs.db
 # Local config
 config.local.*
 settings.local.*
+./chroma_db

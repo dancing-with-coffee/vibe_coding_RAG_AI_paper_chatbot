@@ -57,8 +57,8 @@ class RAGEngine:
                             "content": prompt
                         }
                     ],
-                    temperature=0.7,
-                    max_tokens=10000
+                    #temperature=0.7,
+                    #max_completion_tokens=100000
                 )
                 
                 answer = response.choices[0].message.content

@@ -9,8 +9,8 @@ class Settings:
     PDF_DIRECTORY = "./AI research papers"
     
     # OpenAI 설정
-    EMBEDDING_MODEL = "text-embedding-ada-002"
-    CHAT_MODEL = "gpt-3.5-turbo"
+    EMBEDDING_MODEL = "text-embedding-3-large"
+    CHAT_MODEL = "gpt-5"
     
     # 청크 설정 - 크기를 줄여서 토큰 제한을 피함
     CHUNK_SIZE = 800  # 1000에서 800으로 줄임
