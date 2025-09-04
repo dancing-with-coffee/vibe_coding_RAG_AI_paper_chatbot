@@ -58,7 +58,7 @@ class RAGEngine:
                         }
                     ],
                     temperature=0.7,
-                    max_tokens=1000
+                    max_tokens=10000
                 )
                 
                 answer = response.choices[0].message.content
@@ -97,17 +97,13 @@ class RAGEngine:
         return context
     
     def _create_prompt(self, query: str, context: str) -> str:
-        """프롬프트를 생성합니다."""
-        return f"""
-컨텍스트:
-{context}
-
-질문: {query}
-
-위의 논문 내용을 바탕으로 질문에 대해 정확하고 자세한 답변을 해주세요. 
-답변할 때는 어떤 논문에서 나온 정보인지 언급해주세요.
-만약 제공된 논문 내용으로는 충분한 답변을 할 수 없다면, 그렇다고 명확히 말해주세요.
-"""
+        prompt = f"""컨텍스트: {context}
+        질문: {query}
+        위의 논문 내용을 바탕으로 질문에 대해 정확하고 자세한 답변을 해주세요. 
+        답변할 때는 어떤 논문에서 나온 정보인지 언급해주세요.
+        만약 제공된 논문 내용으로는 충분한 답변을 할 수 없다면, 그렇다고 명확히 말해주세요.
+        """
+        return prompt
     
     def _extract_sources(self, docs: List[Dict]) -> List[Dict]:
         """소스 정보를 추출합니다."""

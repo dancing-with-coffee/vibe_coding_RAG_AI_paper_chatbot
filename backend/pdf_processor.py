@@ -27,7 +27,7 @@ class PDFProcessor:
                 
             print(f"  ✅ {len(text)} 문자 추출 완료")
             return text
-            
+
         except Exception as e:
             print(f"  ❌ PDF 처리 오류 {os.path.basename(pdf_path)}: {e}")
             return ""
